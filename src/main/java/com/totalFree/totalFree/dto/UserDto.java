@@ -1,28 +1,18 @@
-package com.totalFree.totalFree.model;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+package com.totalFree.totalFree.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity
-@Setter
-@Getter
-@ToString
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
-@Table(name = "users")
-public class UserModel {
+@NoArgsConstructor
+@ToString
+public class UserDto {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	private String firstName;
@@ -31,19 +21,15 @@ public class UserModel {
 
 	private String email;
 
-	private boolean status;
-
 	private String username;
 
 	private String gender;
 
 	private String dob;
 
-	private Long createdAt;
-
-	private Long updatedAt;
-
 	private String password;
+
+	private String rePassword;
 
 	public Long getId() {
 		return id;
@@ -77,14 +63,6 @@ public class UserModel {
 		this.email = email;
 	}
 
-	public boolean isStatus() {
-		return status;
-	}
-
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
-
 	public String getUsername() {
 		return username;
 	}
@@ -109,28 +87,20 @@ public class UserModel {
 		this.dob = dob;
 	}
 
-	public Long getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Long createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Long getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Long updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-
 	public String getPassword() {
 		return password;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getRePassword() {
+		return rePassword;
+	}
+
+	public void setRePassword(String rePassword) {
+		this.rePassword = rePassword;
 	}
 
 }
